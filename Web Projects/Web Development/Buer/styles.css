@@ -1,0 +1,24 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-right: 190px;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: inline-block;
+    margin: 3em;
+    text-decoration: none;
+    color: #000;
+}
+
+li a:hover {
+    color: #ECC733;
+}
+
+li i {
+    color: #000;
+}
