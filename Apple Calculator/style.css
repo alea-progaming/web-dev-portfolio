@@ -4,7 +4,7 @@
 }
 
 html, body #fullheight {
-    min-height: 100% !important; /* no matter what html and body should only have a min-height of 100%*/
+    min-height: 100% !important;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
@@ -44,4 +44,40 @@ html, body #fullheight {
     font-size: 100px;
     color: white;
     border-radius: 100%;
+    width: 210px;
+    height: 210px;
+    padding: 10px;  
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+}
+
+.percent {
+    background-color: #a5a5a5;
+    border: none;
+    color: black;
+}
+
+.item1 {
+    background-color: #a5a5a3;
+    border: none;
+    color: black;
+}
+
+.item2 {
+    background-color: #ff9f0a;
+    border: none;
+}
+
+.numbers, .period {
+    background-color: #343434;
+    border: none;
+}
+
+.numberZero {
+    background-color: #343434;
+    width: 435px;
+    border-radius: 135px;
+    grid-column: span 2;
+    border: none;
 }
