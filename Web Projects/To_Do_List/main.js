@@ -1,13 +1,33 @@
 window.addEventListener('load', () => {
 	const form = document.querySelector("#new-task-form");
 	const input = document.querySelector("#new-task-input");
-	const list_el = document.querySelector("#tasks");
+	let list_el = document.querySelector("#tasks");
+		let tasks = []; //tasks array for localStorage
+
+		// Retrieve tasks from local storage if they exist
+		const storedTasks = localStorage.getItem('tasks');
+		if (storedTasks) {
+		  tasks = JSON.parse(storedTasks);
+	  
+		  // Populate the tasks list with the stored tasks
+		  for (const task of tasks) {
+			addTaskToList(task);
+		  }
+		}
 
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
 
 		const task = input.value;
+		tasks.push(task); // add task to array tasks
 
+		localStorage.setItem('tasks', JSON.stringify(tasks)); // save the updated tasks array to local storage
+		addTaskToList(task);
+
+		input.value = '';
+		});
+
+		function addTaskToList(task) {
 		const task_el = document.createElement('div');
 		task_el.classList.add('task');
 
@@ -15,6 +35,7 @@ window.addEventListener('load', () => {
 		task_content_el.classList.add('content');
 
 		task_el.appendChild(task_content_el);
+		
 
 		const task_input_el = document.createElement('input');
 		task_input_el.classList.add('text');
@@ -40,6 +61,7 @@ window.addEventListener('load', () => {
 
 		task_el.appendChild(task_actions_el);
 
+
 		list_el.appendChild(task_el);
 
 		input.value = '';
@@ -53,10 +75,23 @@ window.addEventListener('load', () => {
 				task_edit_el.innerText = "Edit";
 				task_input_el.setAttribute("readonly", "readonly");
 			}
+
+			//	Update the task in the tasks array
+				tasks[list_el.children.length - 1] = task_input_el.value;
+      			localStorage.setItem('tasks', JSON.stringify(tasks));
 		});
+		
 
 		task_delete_el.addEventListener('click', (e) => {
-			list_el.removeChild(task_el);
+			
+
+			//	Remove the task from the tasks array and update localStorage
+				const index = Array.from(list_el.children).indexOf(task_el);
+     				if (index !== -1) {
+        			tasks.splice(index, 1);
+					list_el.removeChild(task_el);
+       				localStorage.setItem('tasks', JSON.stringify(tasks));
+      		}
 		});
-	});
+	}
 });
