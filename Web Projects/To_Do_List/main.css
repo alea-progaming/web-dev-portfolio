@@ -1,5 +1,5 @@
 :root {
-	--dark: #374151;
+	--white: #fafafa;
 	--darker: #1F2937;
 	--darkest: #111827;
 	--grey: #6B7280;
@@ -19,7 +19,7 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	color: #FFF;
-	background-color: var(--dark);
+	background-color: var(--white);
 }
 
 header {
@@ -32,6 +32,7 @@ header {
 header h1{ 
 	font-size: 2.5rem;
 	font-weight: 300;
+	font-family: 'Saira Condensed';
 	color: var(--grey);
 	margin-bottom: 1rem;
 }
