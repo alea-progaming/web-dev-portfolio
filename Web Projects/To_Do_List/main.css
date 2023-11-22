@@ -9,7 +9,7 @@
 }
 
 :root {
-	--white: #fafafa; /* Background color */
+	--white: #ECECEC; /* Background color */
 	--grey-text: #777777; /* Textfield font color */
 	--task-box-color: #F3F3F3; /* Task box color */
 	--violet: #571698;
@@ -58,11 +58,11 @@ input, button {
 
 #new-task-input {
 	flex: 1 1 0%;
-	background-color: var(--white);
+	background-color: var(--task-box-color);
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-right: 1rem;
-	color: var(--grey-text);
+	color: #000;
 	font-size: 1.25rem;
 }
 
@@ -73,14 +73,23 @@ input, button {
 }
 
 #new-task-submit {
-	color: var(--violet);
 	font-size: 1.25rem;
 	font-weight: 700;
+	width: 120px;
+	height: 50px;
+	margin-top: 10px;
+	background: var(--white);
 	background-image: linear-gradient(to right, var(--violet), var(--purple));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	cursor: pointer;
 	transition: 0.4s;
+	border: none;
+	border-radius: 1rem;
+	color: var(--violet);
+	box-shadow: 7px 7px 7px -4px rgba(10, 99, 169, 0.16),
+				0 -5px 10px 1px rgb(255, 255, 255, 0.70);
+
 }
 
 #new-task-submit:hover {
@@ -89,6 +98,7 @@ input, button {
 
 #new-task-submit:active {
 	opacity: 0.6;
+	box-shadow: none;
 }
 
 main {
@@ -155,14 +165,25 @@ main {
 
 .task .actions button:active {
 	opacity: 0.6;
+	box-shadow: none;
 }
 
 .task .actions .edit {
+	padding: 4px 20px;
 	background-image: linear-gradient(to right, var(--violet), var(--purple));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 7px 7px 7px -4px rgba(10, 99, 169, 0.16),
+				0 -5px 10px 1px rgb(255, 255, 255, 0.70);
 }
 
 .task .actions .delete {
+	padding: 4px 20px;
 	color: crimson;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 7px 7px 7px -4px rgba(10, 99, 169, 0.16),
+				0 -5px 10px 1px rgb(255, 255, 255, 0.70);
 }
