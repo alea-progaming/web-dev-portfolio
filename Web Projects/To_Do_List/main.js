@@ -3,6 +3,28 @@ window.addEventListener('load', () => {
 	const input = document.querySelector("#new-task-input");
 	let list_el = document.querySelector("#tasks");
 		let tasks = []; //tasks array for localStorage
+	// dark mode toggle START
+	const toggle = document.getElementById('toggleDark');
+	const body = document.querySelector('body');
+	const formStyle = document.getElementById('new-task-input');
+	const tasksStyle = document.getElementById('tasks');
+	const submit = document.querySelector("#new-task")
+
+	toggle.addEventListener('click', function() {
+		this.classList.toggle('bi-moon-fill');
+		if (this.classList.toggle('bi-brightness-high-fill')) {
+			body.style.background = "#ececec";
+			formStyle.style.background = "#ececec";
+			formStyle.style.boxShadow = "7px 7px 7px -4px rgba(10, 99, 169, 0.16), 0 -5px 10px -1px rgba(255, 255, 255, 0.70)";
+			tasksStyle.style.background = "#ececec";
+		} else {
+			body.style.background = "#2b2b2b";
+			formStyle.style.background = "#262626";
+			formStyle.style.boxShadow = "none";
+			tasksStyle.style.background = "#262626";
+		}
+	})
+	// dark mode toggle END
 
 		// Retrieve tasks from local storage if they exist
 		const storedTasks = localStorage.getItem('tasks');

@@ -12,6 +12,8 @@
 	--white: #ECECEC; /* Background color */
 	--grey-text: #777777; /* Textfield font color */
 	--task-box-color: #F3F3F3; /* Task box color */
+	--shadow: rgba(10, 99, 169, 0.16);
+	--highlight: rgb(255, 255, 255, 0.70);
 	--violet: #571698;
 	--purple: #8B5CF6;
 }
@@ -45,6 +47,19 @@ header h1{
 	margin-bottom: 1rem;
 }
 
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+i {
+	font-size: 30px;
+	color: black;
+	cursor: pointer;
+	transform: translate(-50%, -50%);
+}
+
 #new-task-form {
 	display: flex;;
 }
@@ -58,12 +73,14 @@ input, button {
 
 #new-task-input {
 	flex: 1 1 0%;
-	background-color: var(--task-box-color);
+	background-color: #f1f1f1;
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-right: 1rem;
 	color: #000;
 	font-size: 1.25rem;
+	box-shadow: 7px 7px 7px -4px var(--shadow),
+				0 -5px 10px -1px var(--highlight);
 }
 
 #new-task-input::placeholder {
@@ -86,9 +103,8 @@ input, button {
 	transition: 0.4s;
 	border: none;
 	border-radius: 1rem;
-	color: var(--violet);
-	box-shadow: 7px 7px 7px -4px rgba(10, 99, 169, 0.16),
-				0 -5px 10px 1px rgb(255, 255, 255, 0.70);
+	box-shadow: 7px 7px 7px -4px var(--shadow),
+				0 -5px 10px -1px var(--highlight);
 
 }
 
@@ -120,13 +136,21 @@ main {
 	margin-bottom: 1rem;
 }
 
+#tasks {
+	background-color: var(--white);
+}
+
 #tasks .task {
 	display: flex;
 	justify-content: space-between;
-	background-color: var(--task-box-color);
+	/*background-color: var(--white);*/
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 7px 7px 7px -4px var(--shadow),
+				0 -5px 10px -1px var(--highlight);
 }
 
 .task .content {
@@ -175,8 +199,8 @@ main {
 	-webkit-text-fill-color: transparent;
 	border: none;
 	border-radius: 12px;
-	box-shadow: 7px 7px 7px -4px rgba(10, 99, 169, 0.16),
-				0 -5px 10px 1px rgb(255, 255, 255, 0.70);
+	box-shadow: 7px 7px 7px -4px var(--shadow),
+				0 -5px 10px -1px var(--shadow);
 }
 
 .task .actions .delete {
@@ -184,6 +208,6 @@ main {
 	color: crimson;
 	border: none;
 	border-radius: 12px;
-	box-shadow: 7px 7px 7px -4px rgba(10, 99, 169, 0.16),
-				0 -5px 10px 1px rgb(255, 255, 255, 0.70);
+	box-shadow: 7px 7px 7px -4px var(--shadow),
+				0 -5px 10px -1px var(--shadow);
 }
