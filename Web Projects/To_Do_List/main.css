@@ -91,16 +91,13 @@ input, button {
 
 #new-task-submit {
 	font-size: 1.25rem;
-	font-weight: 700;
+	font-weight: 500;
 	width: 120px;
 	height: 50px;
 	margin-top: 10px;
+	color: black;
 	background: var(--white);
-	background-image: linear-gradient(to right, var(--violet), var(--purple));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 	cursor: pointer;
-	transition: 0.4s;
 	border: none;
 	border-radius: 1rem;
 	box-shadow: 7px 7px 7px -4px var(--shadow),
@@ -137,13 +134,13 @@ main {
 }
 
 #tasks {
-	background-color: var(--white);
+	background-color: #f1f1f1;
 }
 
 #tasks .task {
 	display: flex;
 	justify-content: space-between;
-	/*background-color: var(--white);*/
+	background-color: #f1f1f1;
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
@@ -180,7 +177,7 @@ main {
 	font-size: 1.125rem;
 	font-weight: 700;
 	text-transform: uppercase;
-	transition: 0.4s;
+	transition: 0.1s;
 }
 
 .task .actions button:hover {
@@ -194,20 +191,20 @@ main {
 
 .task .actions .edit {
 	padding: 4px 20px;
-	background-image: linear-gradient(to right, var(--violet), var(--purple));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	font-weight: 500;
+	color: black;
 	border: none;
 	border-radius: 12px;
 	box-shadow: 7px 7px 7px -4px var(--shadow),
-				0 -5px 10px -1px var(--shadow);
+				0 -5px 10px -1px var(--highlight);
 }
 
 .task .actions .delete {
 	padding: 4px 20px;
+	font-weight: 500;
 	color: crimson;
 	border: none;
 	border-radius: 12px;
 	box-shadow: 7px 7px 7px -4px var(--shadow),
-				0 -5px 10px -1px var(--shadow);
+				0 -5px 10px -1px var(--highlight);
 }
