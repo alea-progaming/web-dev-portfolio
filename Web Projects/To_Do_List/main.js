@@ -8,20 +8,32 @@ window.addEventListener('load', () => {
 	const body = document.querySelector('body');
 	const formStyle = document.getElementById('new-task-input');
 	const tasksStyle = document.getElementById('tasks');
-	const submit = document.querySelector("#new-task")
+	const submit = document.getElementById('new-task-submit');
 
 	toggle.addEventListener('click', function() {
 		this.classList.toggle('bi-moon-fill');
 		if (this.classList.toggle('bi-brightness-high-fill')) {
 			body.style.background = "#ececec";
-			formStyle.style.background = "#ececec";
+			formStyle.style.background = "#f1f1f1";
 			formStyle.style.boxShadow = "7px 7px 7px -4px rgba(10, 99, 169, 0.16), 0 -5px 10px -1px rgba(255, 255, 255, 0.70)";
+			formStyle.style.color = "black";
 			tasksStyle.style.background = "#ececec";
+			submit.style.color = "black";
+			submit.style = "box-shadow: rgba(10, 99, 169, 0.16) 7px 7px 7px -4px, rgba(255, 255, 255, 0.7) 0px -5px 10px -1px";
+			submit.addEventListener('mousedown', function() {
+				submit.style.opacity = '';
+				submit.style.boxShadow = '';
+			});
 		} else {
 			body.style.background = "#2b2b2b";
 			formStyle.style.background = "#262626";
 			formStyle.style.boxShadow = "none";
+			formStyle.style.color = "#ececec";
 			tasksStyle.style.background = "#262626";
+			submit.style.color = "#ececec";
+			submit.style.background = "#262626";
+			submit.style.boxShadow = "none";
+			
 		}
 	})
 	// dark mode toggle END
