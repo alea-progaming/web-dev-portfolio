@@ -7,7 +7,6 @@ window.addEventListener('load', () => {
 	const toggle = document.getElementById('toggleDark');
 	const body = document.querySelector('body');
 	const formStyle = document.getElementById('new-task-input');
-	const tasksStyle = document.getElementById('tasks');
 	const submit = document.getElementById('new-task-submit');
 
 	toggle.addEventListener('click', function() {
@@ -17,7 +16,6 @@ window.addEventListener('load', () => {
 			formStyle.style.background = "#f1f1f1";
 			formStyle.style.boxShadow = "7px 7px 7px -4px rgba(10, 99, 169, 0.16), 0 -5px 10px -1px rgba(255, 255, 255, 0.70)";
 			formStyle.style.color = "black";
-			tasksStyle.style.background = "#ececec";
 			submit.style.color = "black";
 			submit.style = "box-shadow: rgba(10, 99, 169, 0.16) 7px 7px 7px -4px, rgba(255, 255, 255, 0.7) 0px -5px 10px -1px";
 			submit.addEventListener('mousedown', function() {
@@ -27,13 +25,18 @@ window.addEventListener('load', () => {
 		} else {
 			body.style.background = "#2b2b2b";
 			formStyle.style.background = "#262626";
-			formStyle.style.boxShadow = "none";
+			formStyle.style.boxShadow = "7px 7px 7px -4px rgba(10, 99, 169, 0.16), 0 -5px 10px -1px rgba(0, 0, 0, 0.30)";
 			formStyle.style.color = "#ececec";
-			tasksStyle.style.background = "#262626";
 			submit.style.color = "#ececec";
 			submit.style.background = "#262626";
-			submit.style.boxShadow = "none";
-			
+			submit.style.boxShadow = "7px 7px 7px -4px rgba(10, 99, 169, 0.16), 0 -5px 10px -1px rgba(0, 0, 0, 0.30)";
+			submit.addEventListener('mousedown', function() {
+				submit.style.opacity = '';
+				submit.style.boxShadow = '';
+			});
+			submit.addEventListener('mouseup', function() {
+				submit.style.boxShadow = '7px 7px 7px -4px rgba(10, 99, 169, 0.16), 0 -5px 10px -1px rgba(0, 0, 0, 0.30)';
+			});
 		}
 	})
 	// dark mode toggle END

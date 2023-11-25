@@ -133,10 +133,6 @@ main {
 	margin-bottom: 1rem;
 }
 
-#tasks {
-	background-color: #f1f1f1;
-}
-
 #tasks .task {
 	display: flex;
 	justify-content: space-between;
