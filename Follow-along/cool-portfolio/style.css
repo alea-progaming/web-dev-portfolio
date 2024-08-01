@@ -439,7 +439,7 @@ span {
   html {
     font-size: 55%;
   }
-  .service-container {
+  .services-container {
     padding-bottom: 7rem;
     grid-template-columns: repeat(2, 1fr);
     margin: 0 rem;
